@@ -71,7 +71,7 @@ flowbit-langflow-project/
 ### 1. Clone & Setup
 
 ```bash
-git clone <your-repo>
+git clone <https://github.com/Shannuuu2012/-FlowBit-LangFlow-Docker-based-Orchestration-Project.git>
 cd flowbit-langflow-project
 ```
 
