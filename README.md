@@ -166,7 +166,9 @@ services:
 
 ## 📸 Screenshot
 
-![Dashboard Preview](./public/placeholder.jpg)
+![langflow](docs/ss1)
+![flowbit](docs/ss2)
+
 
 ---
 
