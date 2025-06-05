@@ -166,8 +166,8 @@ services:
 
 ## 📸 Screenshot
 
-![langflow](docs/ss1)
-![flowbit](docs/ss2)
+![langflow](docs/ss1.png)
+![flowbit](docs/ss2.png)
 
 
 ---
