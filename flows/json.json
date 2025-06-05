@@ -1,0 +1,453 @@
+{
+  "data": {
+    "edges": [
+      {
+        "animated": false,
+        "data": {
+          "sourceHandle": {
+            "dataType": "Prompt",
+            "id": "Prompt-ZQcoi",
+            "name": "prompt",
+            "output_types": [
+              "Message"
+            ]
+          },
+          "targetHandle": {
+            "fieldName": "python_code",
+            "id": "PythonREPLComponent-ZuWHm",
+            "inputTypes": [
+              "Message"
+            ],
+            "type": "code"
+          }
+        },
+        "id": "xy-edge__Prompt-ZQcoi{œdataTypeœ:œPromptœ,œidœ:œPrompt-ZQcoiœ,œnameœ:œpromptœ,œoutput_typesœ:[œMessageœ]}-PythonREPLComponent-ZuWHm{œfieldNameœ:œpython_codeœ,œidœ:œPythonREPLComponent-ZuWHmœ,œinputTypesœ:[œMessageœ],œtypeœ:œcodeœ}",
+        "selected": false,
+        "source": "Prompt-ZQcoi",
+        "sourceHandle": "{œdataTypeœ:œPromptœ,œidœ:œPrompt-ZQcoiœ,œnameœ:œpromptœ,œoutput_typesœ:[œMessageœ]}",
+        "target": "PythonREPLComponent-ZuWHm",
+        "targetHandle": "{œfieldNameœ:œpython_codeœ,œidœ:œPythonREPLComponent-ZuWHmœ,œinputTypesœ:[œMessageœ],œtypeœ:œcodeœ}"
+      },
+      {
+        "animated": false,
+        "data": {
+          "sourceHandle": {
+            "dataType": "TextInput",
+            "id": "TextInput-3PdmN",
+            "name": "text",
+            "output_types": [
+              "Message"
+            ]
+          },
+          "targetHandle": {
+            "fieldName": "input",
+            "id": "Prompt-ZQcoi",
+            "inputTypes": [
+              "Message"
+            ],
+            "type": "str"
+          }
+        },
+        "id": "xy-edge__TextInput-3PdmN{œdataTypeœ:œTextInputœ,œidœ:œTextInput-3PdmNœ,œnameœ:œtextœ,œoutput_typesœ:[œMessageœ]}-Prompt-ZQcoi{œfieldNameœ:œinputœ,œidœ:œPrompt-ZQcoiœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}",
+        "selected": false,
+        "source": "TextInput-3PdmN",
+        "sourceHandle": "{œdataTypeœ:œTextInputœ,œidœ:œTextInput-3PdmNœ,œnameœ:œtextœ,œoutput_typesœ:[œMessageœ]}",
+        "target": "Prompt-ZQcoi",
+        "targetHandle": "{œfieldNameœ:œinputœ,œidœ:œPrompt-ZQcoiœ,œinputTypesœ:[œMessageœ],œtypeœ:œstrœ}"
+      }
+    ],
+    "nodes": [
+      {
+        "data": {
+          "id": "TextInput-3PdmN",
+          "node": {
+            "base_classes": [
+              "Message"
+            ],
+            "beta": false,
+            "conditional_paths": [],
+            "custom_fields": {},
+            "description": "Get text inputs from the Playground.",
+            "display_name": "Text Input",
+            "documentation": "",
+            "edited": false,
+            "field_order": [
+              "input_value"
+            ],
+            "frozen": false,
+            "icon": "type",
+            "legacy": false,
+            "metadata": {},
+            "minimized": false,
+            "output_types": [],
+            "outputs": [
+              {
+                "allows_loop": false,
+                "cache": true,
+                "display_name": "Message",
+                "hidden": false,
+                "method": "text_response",
+                "name": "text",
+                "selected": "Message",
+                "tool_mode": true,
+                "types": [
+                  "Message"
+                ],
+                "value": "__UNDEFINED__"
+              }
+            ],
+            "pinned": false,
+            "template": {
+              "_type": "Component",
+              "code": {
+                "advanced": true,
+                "dynamic": true,
+                "fileTypes": [],
+                "file_path": "",
+                "info": "",
+                "list": false,
+                "load_from_db": false,
+                "multiline": true,
+                "name": "code",
+                "password": false,
+                "placeholder": "",
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "type": "code",
+                "value": "from langflow.base.io.text import TextComponent\nfrom langflow.io import MultilineInput, Output\nfrom langflow.schema.message import Message\n\n\nclass TextInputComponent(TextComponent):\n    display_name = \"Text Input\"\n    description = \"Get text inputs from the Playground.\"\n    icon = \"type\"\n    name = \"TextInput\"\n\n    inputs = [\n        MultilineInput(\n            name=\"input_value\",\n            display_name=\"Text\",\n            info=\"Text to be passed as input.\",\n        ),\n    ]\n    outputs = [\n        Output(display_name=\"Message\", name=\"text\", method=\"text_response\"),\n    ]\n\n    def text_response(self) -> Message:\n        return Message(\n            text=self.input_value,\n        )\n"
+              },
+              "input_value": {
+                "_input_type": "MultilineInput",
+                "advanced": false,
+                "copy_field": false,
+                "display_name": "Text",
+                "dynamic": false,
+                "info": "Text to be passed as input.",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "multiline": true,
+                "name": "input_value",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
+              }
+            },
+            "tool_mode": false
+          },
+          "showNode": true,
+          "type": "TextInput"
+        },
+        "dragging": false,
+        "id": "TextInput-3PdmN",
+        "measured": {
+          "height": 228,
+          "width": 320
+        },
+        "position": {
+          "x": 49.5,
+          "y": 53.5
+        },
+        "selected": false,
+        "type": "genericNode"
+      },
+      {
+        "data": {
+          "id": "Prompt-ZQcoi",
+          "node": {
+            "base_classes": [
+              "Message"
+            ],
+            "beta": false,
+            "conditional_paths": [],
+            "custom_fields": {
+              "template": [
+                "input"
+              ]
+            },
+            "description": "Create a prompt template with dynamic variables.",
+            "display_name": "Prompt",
+            "documentation": "",
+            "edited": false,
+            "error": null,
+            "field_order": [
+              "template",
+              "tool_placeholder"
+            ],
+            "frozen": false,
+            "full_path": null,
+            "icon": "prompts",
+            "is_composition": null,
+            "is_input": null,
+            "is_output": null,
+            "legacy": false,
+            "metadata": {},
+            "minimized": false,
+            "name": "",
+            "output_types": [],
+            "outputs": [
+              {
+                "allows_loop": false,
+                "cache": true,
+                "display_name": "Prompt Message",
+                "hidden": false,
+                "method": "build_prompt",
+                "name": "prompt",
+                "options": null,
+                "required_inputs": null,
+                "selected": "Message",
+                "tool_mode": true,
+                "types": [
+                  "Message"
+                ],
+                "value": "__UNDEFINED__"
+              }
+            ],
+            "pinned": false,
+            "priority": null,
+            "template": {
+              "_type": "Component",
+              "code": {
+                "advanced": true,
+                "dynamic": true,
+                "fileTypes": [],
+                "file_path": "",
+                "info": "",
+                "list": false,
+                "load_from_db": false,
+                "multiline": true,
+                "name": "code",
+                "password": false,
+                "placeholder": "",
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "type": "code",
+                "value": "from langflow.base.prompts.api_utils import process_prompt_template\nfrom langflow.custom import Component\nfrom langflow.inputs.inputs import DefaultPromptField\nfrom langflow.io import MessageTextInput, Output, PromptInput\nfrom langflow.schema.message import Message\nfrom langflow.template.utils import update_template_values\n\n\nclass PromptComponent(Component):\n    display_name: str = \"Prompt\"\n    description: str = \"Create a prompt template with dynamic variables.\"\n    icon = \"prompts\"\n    trace_type = \"prompt\"\n    name = \"Prompt\"\n\n    inputs = [\n        PromptInput(name=\"template\", display_name=\"Template\"),\n        MessageTextInput(\n            name=\"tool_placeholder\",\n            display_name=\"Tool Placeholder\",\n            tool_mode=True,\n            advanced=True,\n            info=\"A placeholder input for tool mode.\",\n        ),\n    ]\n\n    outputs = [\n        Output(display_name=\"Prompt Message\", name=\"prompt\", method=\"build_prompt\"),\n    ]\n\n    async def build_prompt(self) -> Message:\n        prompt = Message.from_template(**self._attributes)\n        self.status = prompt.text\n        return prompt\n\n    def _update_template(self, frontend_node: dict):\n        prompt_template = frontend_node[\"template\"][\"template\"][\"value\"]\n        custom_fields = frontend_node[\"custom_fields\"]\n        frontend_node_template = frontend_node[\"template\"]\n        _ = process_prompt_template(\n            template=prompt_template,\n            name=\"template\",\n            custom_fields=custom_fields,\n            frontend_node_template=frontend_node_template,\n        )\n        return frontend_node\n\n    async def update_frontend_node(self, new_frontend_node: dict, current_frontend_node: dict):\n        \"\"\"This function is called after the code validation is done.\"\"\"\n        frontend_node = await super().update_frontend_node(new_frontend_node, current_frontend_node)\n        template = frontend_node[\"template\"][\"template\"][\"value\"]\n        # Kept it duplicated for backwards compatibility\n        _ = process_prompt_template(\n            template=template,\n            name=\"template\",\n            custom_fields=frontend_node[\"custom_fields\"],\n            frontend_node_template=frontend_node[\"template\"],\n        )\n        # Now that template is updated, we need to grab any values that were set in the current_frontend_node\n        # and update the frontend_node with those values\n        update_template_values(new_template=frontend_node, previous_template=current_frontend_node[\"template\"])\n        return frontend_node\n\n    def _get_fallback_input(self, **kwargs):\n        return DefaultPromptField(**kwargs)\n"
+              },
+              "input": {
+                "advanced": false,
+                "display_name": "input",
+                "dynamic": false,
+                "field_type": "str",
+                "fileTypes": [],
+                "file_path": "",
+                "info": "",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "load_from_db": false,
+                "multiline": true,
+                "name": "input",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "type": "str",
+                "value": ""
+              },
+              "template": {
+                "_input_type": "PromptInput",
+                "advanced": false,
+                "display_name": "Template",
+                "dynamic": false,
+                "info": "",
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "template",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_input": true,
+                "type": "prompt",
+                "value": "Parse the following JSON and extract any \"name\", \"date\", and \"amount\" fields. Return only those.\n\nInput: {input}\n"
+              },
+              "tool_placeholder": {
+                "_input_type": "MessageTextInput",
+                "advanced": true,
+                "display_name": "Tool Placeholder",
+                "dynamic": false,
+                "info": "A placeholder input for tool mode.",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "tool_placeholder",
+                "placeholder": "",
+                "required": false,
+                "show": true,
+                "title_case": false,
+                "tool_mode": true,
+                "trace_as_input": true,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": ""
+              }
+            },
+            "tool_mode": false
+          },
+          "showNode": true,
+          "type": "Prompt"
+        },
+        "dragging": false,
+        "id": "Prompt-ZQcoi",
+        "measured": {
+          "height": 395,
+          "width": 320
+        },
+        "position": {
+          "x": 389.5,
+          "y": 60.5
+        },
+        "selected": false,
+        "type": "genericNode"
+      },
+      {
+        "data": {
+          "id": "PythonREPLComponent-ZuWHm",
+          "node": {
+            "base_classes": [
+              "Data"
+            ],
+            "beta": false,
+            "conditional_paths": [],
+            "custom_fields": {},
+            "description": "A Python code executor that lets you run Python code with specific imported modules. Remember to always use print() to see your results. Example: print(df.head())",
+            "display_name": "Python REPL",
+            "documentation": "",
+            "edited": false,
+            "field_order": [
+              "global_imports",
+              "python_code"
+            ],
+            "frozen": false,
+            "icon": "Python",
+            "legacy": false,
+            "metadata": {},
+            "minimized": false,
+            "output_types": [],
+            "outputs": [
+              {
+                "allows_loop": false,
+                "cache": true,
+                "display_name": "Results",
+                "method": "run_python_repl",
+                "name": "results",
+                "selected": "Data",
+                "tool_mode": true,
+                "types": [
+                  "Data"
+                ],
+                "value": "__UNDEFINED__"
+              }
+            ],
+            "pinned": false,
+            "template": {
+              "_type": "Component",
+              "code": {
+                "advanced": true,
+                "dynamic": true,
+                "fileTypes": [],
+                "file_path": "",
+                "info": "",
+                "list": false,
+                "load_from_db": false,
+                "multiline": true,
+                "name": "code",
+                "password": false,
+                "placeholder": "",
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "type": "code",
+                "value": "import importlib\n\nfrom langchain_experimental.utilities import PythonREPL\n\nfrom langflow.custom import Component\nfrom langflow.io import CodeInput, Output, StrInput\nfrom langflow.schema import Data\n\n\nclass PythonREPLComponent(Component):\n    display_name = \"Python REPL\"\n    description = (\n        \"A Python code executor that lets you run Python code with specific imported modules. \"\n        \"Remember to always use print() to see your results. Example: print(df.head())\"\n    )\n    icon = \"Python\"\n\n    inputs = [\n        StrInput(\n            name=\"global_imports\",\n            display_name=\"Global Imports\",\n            info=\"A comma-separated list of modules to import globally, e.g. 'math,numpy,pandas'.\",\n            value=\"math,pandas\",\n            required=True,\n        ),\n        CodeInput(\n            name=\"python_code\",\n            display_name=\"Python Code\",\n            info=\"The Python code to execute. Only modules specified in Global Imports can be used.\",\n            value=\"print('Hello, World!')\",\n            input_types=[\"Message\"],\n            tool_mode=True,\n            required=True,\n        ),\n    ]\n\n    outputs = [\n        Output(\n            display_name=\"Results\",\n            name=\"results\",\n            type_=Data,\n            method=\"run_python_repl\",\n        ),\n    ]\n\n    def get_globals(self, global_imports: str | list[str]) -> dict:\n        \"\"\"Create a globals dictionary with only the specified allowed imports.\"\"\"\n        global_dict = {}\n\n        try:\n            if isinstance(global_imports, str):\n                modules = [module.strip() for module in global_imports.split(\",\")]\n            elif isinstance(global_imports, list):\n                modules = global_imports\n            else:\n                msg = \"global_imports must be either a string or a list\"\n                raise TypeError(msg)\n\n            for module in modules:\n                try:\n                    imported_module = importlib.import_module(module)\n                    global_dict[imported_module.__name__] = imported_module\n                except ImportError as e:\n                    msg = f\"Could not import module {module}: {e!s}\"\n                    raise ImportError(msg) from e\n\n        except Exception as e:\n            self.log(f\"Error in global imports: {e!s}\")\n            raise\n        else:\n            self.log(f\"Successfully imported modules: {list(global_dict.keys())}\")\n            return global_dict\n\n    def run_python_repl(self) -> Data:\n        try:\n            globals_ = self.get_globals(self.global_imports)\n            python_repl = PythonREPL(_globals=globals_)\n            result = python_repl.run(self.python_code)\n            result = result.strip() if result else \"\"\n\n            self.log(\"Code execution completed successfully\")\n            return Data(data={\"result\": result})\n\n        except ImportError as e:\n            error_message = f\"Import Error: {e!s}\"\n            self.log(error_message)\n            return Data(data={\"error\": error_message})\n\n        except SyntaxError as e:\n            error_message = f\"Syntax Error: {e!s}\"\n            self.log(error_message)\n            return Data(data={\"error\": error_message})\n\n        except (NameError, TypeError, ValueError) as e:\n            error_message = f\"Error during execution: {e!s}\"\n            self.log(error_message)\n            return Data(data={\"error\": error_message})\n\n    def build(self):\n        return self.run_python_repl\n"
+              },
+              "global_imports": {
+                "_input_type": "StrInput",
+                "advanced": false,
+                "display_name": "Global Imports",
+                "dynamic": false,
+                "info": "A comma-separated list of modules to import globally, e.g. 'math,numpy,pandas'.",
+                "list": false,
+                "list_add_label": "Add More",
+                "load_from_db": false,
+                "name": "global_imports",
+                "placeholder": "",
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "tool_mode": false,
+                "trace_as_metadata": true,
+                "type": "str",
+                "value": "math,pandas"
+              },
+              "python_code": {
+                "_input_type": "CodeInput",
+                "advanced": false,
+                "display_name": "Python Code",
+                "dynamic": false,
+                "info": "The Python code to execute. Only modules specified in Global Imports can be used.",
+                "input_types": [
+                  "Message"
+                ],
+                "list": false,
+                "list_add_label": "Add More",
+                "name": "python_code",
+                "placeholder": "",
+                "required": true,
+                "show": true,
+                "title_case": false,
+                "tool_mode": true,
+                "trace_as_input": true,
+                "type": "code",
+                "value": "import json\r\ndata = json.loads(inputs[\"input\"])\r\noutput = {\r\n    \"name\": data.get(\"name\"),\r\n    \"date\": data.get(\"date\"),\r\n    \"amount\": data.get(\"amount\")\r\n}\r\nprint(output)\r\n"
+              }
+            },
+            "tool_mode": false
+          },
+          "showNode": true,
+          "type": "PythonREPLComponent"
+        },
+        "dragging": false,
+        "id": "PythonREPLComponent-ZuWHm",
+        "measured": {
+          "height": 376,
+          "width": 320
+        },
+        "position": {
+          "x": 755.5,
+          "y": 73.5
+        },
+        "selected": false,
+        "type": "genericNode"
+      }
+    ],
+    "viewport": {
+      "x": 0,
+      "y": 0,
+      "zoom": 1
+    }
+  },
+  "description": "Language Models, Unleashed.",
+  "endpoint_name": null,
+  "id": "56222060-3a79-425e-bedf-d09a18437c24",
+  "is_component": false,
+  "last_tested_version": "1.4.2",
+  "name": "json",
+  "tags": []
+}
