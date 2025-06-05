@@ -184,7 +184,8 @@ services:
 
 ## 🧑‍💻 Author
 
-- Built by Shannuuu
+- Built by Shanmukh
+
 
 ---
 
